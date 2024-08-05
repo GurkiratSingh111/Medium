@@ -21,18 +21,18 @@ export const signininput = z.object({
 //type inference in zod
 export type SigninInput = z.infer<typeof signininput>
 
-export const createBlog = z.object({
+export const createBlogInput = z.object({
     title: z.string(),
     content: z.string(),
 });
 
-export type createBlogInput = z.infer<typeof createBlog>
+export type CreateBlogInput = z.infer<typeof createBlogInput>
 
 
-export const updateBlog = z.object({
+export const updateBlogInput = z.object({
     title: z.string(),
     content: z.string(),
     id: z.number()
 });
 
-export type updateBlogInput = z.infer<typeof updateBlog>
+export type UpdateBlogInput = z.infer<typeof updateBlogInput>
