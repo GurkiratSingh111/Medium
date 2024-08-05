@@ -13,7 +13,8 @@ export const blogRouter = new Hono<{
         userId: number
     }
 }>()
-    
+
+
 blogRouter.use("/*", async(c,next)=>{
     //extracts the user id
     //pass it down to the router handler
