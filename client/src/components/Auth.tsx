@@ -21,7 +21,7 @@ const Auth = ({type}: {type: "signup" | "signin"}) => {
             const jwt = response.data.jwt;
             localStorage.setItem("token", jwt);
             console.log(jwt);
-            navigate("/blog");
+            navigate("/blogs");
         }catch(error){
             alert("Error while signing up")
         }
