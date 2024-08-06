@@ -69,7 +69,6 @@ userRouter.post("/signup", async(c)=>{
         where: {
           username: body.username,
           password: body.password,
-          name: body.name
         }
       })
       if(!user){
