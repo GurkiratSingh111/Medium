@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Avatar from "./Avatar"
 import Circle from "./Circle"
 
@@ -5,14 +6,16 @@ interface BlogCardProps{
     authorName: string,
     title: string,
     content: string,
-    publishedDate?: string
+    publishedDate?: string,
+    id: Number
 
 }
 
-const BlogCard = ({authorName, title, content, publishedDate}: BlogCardProps) => {
+const BlogCard = ({authorName, title, content, publishedDate, id}: BlogCardProps) => {
     
 
   return (
+    <Link to={`/blog/${id}`}>
     <div className="flex flex-col m-2 border-b border-slate-200 pb-2 cursor-pointer">
         <div className="flex">
             <Avatar authorName={authorName}/>
@@ -32,6 +35,7 @@ const BlogCard = ({authorName, title, content, publishedDate}: BlogCardProps) =>
         </div>
       
     </div>
+    </Link>
   )
 }
 
