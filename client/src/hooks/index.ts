@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
@@ -35,6 +36,34 @@ export const useBlogs = () =>{
     return {
         loading, blogs
     }
+}
 
+
+export const useBlog = ({id}:{
+    id: string | ""
+}) =>{
+    const [loading, setLoading] = useState(true);
+    const [blog, setBlog] = useState<BlogProps | null>(null);
+
+    useEffect(()=>{
+        const fetchBlog = async () => {
+            try{
+                const response = await axios.get(`${BACKEND_URL}/api/v1/blog/${id}`,{
+                    headers: {
+                        'Authorization': localStorage.getItem('token')
+                    }
+                });
+                setBlog(response.data.blog);
+                setLoading(false);
+            }catch(error){
+                alert(error);
+            }
+        }
+        fetchBlog();
+    },[id])
+
+    return {
+        loading, blog
+    }
 
 }
