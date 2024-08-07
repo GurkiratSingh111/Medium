@@ -1,5 +1,5 @@
-import Appbar from "../components/Appbar";
-import Avatar from "../components/Avatar";
+import Appbar from "./Appbar";
+import Avatar from "./Avatar";
 
 interface BlogProps {
   author: {
@@ -24,7 +24,7 @@ const BlogPage = ({ blog }: { blog: BlogProps }) => {
             <div className="text-slate-800 mt-2">{blog.content}</div>
           </div>
         </div>
-        <div className="flex flex-col w-2/5 justify-start items-start">
+        <div className="flex flex-col w-2/5 ml-10 justify-start items-start">
           <div className="mt-4 font-medium text-2xl text-gray-600">Author</div>
           <div>
             <div className="flex m-3 ml-0 p-2 pb-0 mb-0">
